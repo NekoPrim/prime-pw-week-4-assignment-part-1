@@ -24,15 +24,15 @@ function helloName(name) {
 // Remember to call the function to test
 
 console.log('Test - should say "Hello name!"', helloName('dez'));
-console.log(helloName('michi'))
+console.log(helloName('michi'));
 helloName('neko');
 
 // 3. Function to add two numbers together & return the result
 
 function addNumbers(firstNumber, secondNumber) {
-  console.log('in addNumber', firstNumber, secondNumber);
+  console.log('in addNumber:', firstNumber, secondNumber);
   answer = firstNumber + secondNumber;
-  return answer
+  return answer;
   // return firstNumber + secondNumber;
 }
 
@@ -42,7 +42,7 @@ console.log('running addNumbers with 72 and 5:', addNumbers(72, 5));
 // 4. Function to multiply three numbers & return the result
 
 function multiplyThree(num0, num1, num2) {
-  console.log('in multiplyThree', num0, num1, num2);
+  console.log('in multiplyThree:', num0, num1, num2);
   answer = num0 * num1 * num2;
   return answer;
 }
@@ -80,7 +80,12 @@ console.log('isPositive - should say false', isPositive(1));
 function getLast(array) {
   console.log('in getLast');
   lastItem = array[array.length - 1];
-  return lastItem;
+  if (array.length > 0) {
+    return lastItem;
+  }
+  else {
+    return 'undefined';
+  }
 }
 
 let animals = ['dog', 'cat', 'horse', 'bird'];
@@ -91,9 +96,9 @@ let soups = ['minestrone', 'tomato', 'potato'];
 
 console.log('last soup is', getLast(soups));
 
-let cakes = [ ];
+let cakes = [];
 
-console.log('last cake is', getLast(cakes)); 
+console.log('last cake is', getLast(cakes));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
@@ -101,15 +106,14 @@ console.log('last cake is', getLast(cakes));
 
 function find(value, array) {
   console.log('in find');
-  i=0;
-  value = array[i];
-  for (value of array) {
-    console.log('in loop');
-    if (value){
-      console.log(`${value} is in ${array}`);
+  for (let x of array) {
+    console.log('in loop',);
+    if (value === x) {
+      console.log(`${value} is in this array`);
       return true;
     }
     else {
+      console.log(`${value} is not in this array`);
       return false;
     }
   }
@@ -119,13 +123,20 @@ console.log(find('dog', animals));
 
 console.log(find('pig', animals));
 
+console.log(find('minestone', soups));
+
+console.log(find('vegetable', soups));
+
+//question: this one comes out false...
+console.log(find(soups[2], soups));
+
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));

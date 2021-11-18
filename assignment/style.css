@@ -1,0 +1,34 @@
+body {
+    background-image: url(images/outerSpace.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: black;
+    border: 2px dotted silver;
+    border-radius: 50px;
+    color: silver;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 30rem;
+    opacity: 0.6;
+    padding-left: 4rem;
+}
+
+.astronaut {
+    animation-direction: alternate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: noGravity;
+    border: 2px dotted silver;
+    border-radius: 50px;
+    margin-right: 2rem;
+    opacity: 0.4;
+    position: relative;
+    width: 10%;
+}
+
+@keyframes noGravity {
+    0%, 100% {left: 60rem; top: -5rem;}
+    50% {left: 60rem; top: -4rem;}
+}

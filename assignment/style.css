@@ -10,9 +10,10 @@ header {
     border-radius: 50px;
     color: silver;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-right: 30rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
     opacity: 0.6;
-    padding-left: 4rem;
+    text-align: center;
 }
 
 .astronaut {
@@ -20,15 +21,14 @@ header {
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-name: noGravity;
-    border: 2px dotted silver;
     border-radius: 50px;
-    margin-right: 2rem;
+    bottom: 1rem;
     opacity: 0.4;
-    position: relative;
+    position: fixed;
     width: 10%;
 }
 
 @keyframes noGravity {
-    0%, 100% {left: 60rem; top: -5rem;}
-    50% {left: 60rem; top: -4rem;}
+    0%, 100% {left: 2rem; bottom: 1rem;}
+    50% {left: 2rem; bottom: 3rem;}
 }

@@ -70,18 +70,17 @@ console.log('isPositive - should say true', isPositive(3));
 console.log('isPositive - should say false', isPositive(0));
 console.log('isPositive - should say false', isPositive(-3));
 
-console.log('isPositive - should say true', isPositive(-8));
-console.log('isPositive - should say false', isPositive(12));
-console.log('isPositive - should say false', isPositive(1));
+console.log('isPositive - should say false', isPositive(-8));
+console.log('isPositive - should say true', isPositive(12));
+console.log('isPositive - should say true', isPositive(1));
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 
 function getLast(array) {
   console.log('in getLast');
-  lastItem = array[array.length - 1];
   if (array.length > 0) {
-    return lastItem;
+    return array[array.length - 1];;
   }
   else {
     return 'undefined';
@@ -90,15 +89,15 @@ function getLast(array) {
 
 let animals = ['dog', 'cat', 'horse', 'bird'];
 
-console.log('last animal is', getLast(animals));
+console.log('last animal is:', getLast(animals));
 
 let soups = ['minestrone', 'tomato', 'potato'];
 
-console.log('last soup is', getLast(soups));
+console.log('last soup is:', getLast(soups));
 
 let cakes = [];
 
-console.log('last cake is', getLast(cakes));
+console.log('last cake is:', getLast(cakes));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
@@ -107,28 +106,25 @@ console.log('last cake is', getLast(cakes));
 function find(value, array) {
   console.log('in find');
   for (let x of array) {
-    console.log('in loop',);
-    if (value === x) {
+    console.log('in loop', x);
+    if (x === value) {
       console.log(`${value} is in this array`);
       return true;
     }
-    else {
-      console.log(`${value} is not in this array`);
+    if (x != value && x === array[array.length-1]) {
+      console.log(`${value} is not in this array`)
       return false;
     }
   }
 }
 
-console.log(find('dog', animals));
+console.log(find('bird', animals));
 
-console.log(find('pig', animals));
+console.log(find('potato', animals));
 
-console.log(find('minestone', soups));
+console.log(find('minestrone', soups));
 
-console.log(find('vegetable', soups));
-
-//question: this one comes out false...
-console.log(find(soups[2], soups));
+console.log(find('tomato', soups));
 
 // ----------------------
 // Stretch Goals
@@ -136,7 +132,7 @@ console.log(find(soups[2], soups));
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-  
+
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));

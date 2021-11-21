@@ -80,7 +80,7 @@ console.log('isPositive - should say true', isPositive(1));
 function getLast(array) {
   console.log('in getLast');
   if (array.length > 0) {
-    return array[array.length - 1];;
+    return array[array.length - 1];
   }
   else {
     return 'undefined';
@@ -106,12 +106,11 @@ console.log('last cake is:', getLast(cakes));
 function find(value, array) {
   console.log('in find');
   for (let x of array) {
-    console.log('in loop', x);
     if (x === value) {
       console.log(`${value} is in this array`);
       return true;
     }
-    if (x != value && x === array[array.length-1]) {
+    else if (x != value && x === array[array.length-1]) {
       console.log(`${value} is not in this array`);
       return false;
     }
@@ -131,19 +130,39 @@ console.log(find('tomato', soups));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
 
+function isFirstLetter(letter, string) {
+  console.log('in isFirtsLetter');
+  if (string[0] === letter) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+
+function sumAll(array) {
+  console.log('in sumAll');
   let sum = 0;
+  for (x = 0; x < array.length; x ++) {
+    sum += array[x];
+  }
   // TODO: loop to add items
   return sum;
 }
+
+let oneToFive = [1, 2, 3, 4, 5];
+
+console.log('total of oneToFive is:', sumAll(oneToFive));
+
+let sixToTen = [6, 7, 8, 9, 10];
+
+console.log('total of sixToTen is:', sumAll(sixToTen));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
